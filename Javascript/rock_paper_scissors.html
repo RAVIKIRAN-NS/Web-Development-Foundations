@@ -20,11 +20,16 @@
       ">Scissors
     </button>
 
+    <p class = 'js-result'></p>
+    <p class = 'js-moves'></p>
+    <p class = 'js-score'></p>
+
     <button onclick = '
       score.Wins = 0;
       score.Loses = 0;
       score.Tie = 0;
-      localStorage.removeItem("score")'>
+      localStorage.removeItem("score")
+      para_score()'>
       Reset Score
     </button>
 
@@ -36,6 +41,9 @@
         Loses : 0,
         Tie : 0
         };
+
+        para_score();
+
       // if (score === null){
       //   score ={
       //   Wins : 0,
@@ -84,11 +92,26 @@
 
         localStorage.setItem('score', JSON.stringify(score));
 
-        alert(`You picked ${playerMove}.Computer picked ${computerMove}.${result}.
-Wins : ${score.Wins} Loses : ${score.Loses} Tie : ${score.Tie}`);
+        para_score();
+        
+        document.querySelector('.js-result')
+        .innerHTML = result;
+
+        document.querySelector('.js-moves')
+        .innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+        
+
+//         alert(`You picked ${playerMove}.Computer picked ${computerMove}.${result}.
+// Wins : ${score.Wins} Loses : ${score.Loses} Tie : ${score.Tie}`);
 
       }
-        
+
+      function para_score(){
+        document.querySelector('.js-score')
+        .innerHTML = `Wins : ${score.Wins} Loses : ${score.Loses} Tie : ${score.Tie}`;
+      }
+      
+
       function pickComputermove(){
         const randomMove = Math.random();
         let computerMove = '';
