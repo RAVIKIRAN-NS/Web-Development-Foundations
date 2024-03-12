@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object 3</title>
+  </head>
+  <body>
+    <script>
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const object1 = {
+        message : 'hello'
+      };
+      const object2 = object1;
+      object1.message = 'Good Job';
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message : 'hello'
+      };
+      console.log(object1 === object3);
+      console.log(object1 === object2);
+
+      const object4 = {
+        message : 'hello',
+        message1 : 'hello 1'
+      };
+
+      const ot_message = object4.message;
+      console.log(ot_message);
+      const {message1,message} = object4;
+      console.log(message1);
+      console.log(message);
+
+      const object5 = {
+        message,
+        method : function fun1(){
+          console.log('method');
+        },
+        met1(){
+          console.log('meth1');
+        }
+      }
+
+      console.log(object5);
+      object5.method();
+      object5.met1();    
+    </script>
+  </body>
+</html>
