@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <Title>Objects - 2</Title>
+  </head>
+  <body>
+    <script>
+      const product2 = {
+        name : 'shirts',
+        'delivery-time' : 1,
+        rating : {
+          stars : 4.5,
+          points : 97
+        },
+        fun : function() {
+          console.log('function inside object');
+        }
+      };
+      console.log(product2['name']);
+      console.log(product2['delivery-time']);
+      console.log(product2.rating.stars);
+      product2.fun();
+      console.log(typeof console);
+      console.log(typeof console.log);
+
+      console.log(JSON.stringify(product2));
+      const jsonString = JSON.stringify(product2);
+      console.log(JSON.parse(jsonString));
+
+      localStorage.setItem('message','hello');
+      console.log(localStorage.getItem('message'));
+
+
+    </script>
+  </body>
+</html>
